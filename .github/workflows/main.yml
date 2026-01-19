@@ -28,9 +28,8 @@ jobs:
         uses: azure/sql-action@v2.3
         with:
           connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-          sql-file: |
-            SELECT GETUTCDATE() AS CurrentUTC;
-          action: 'execute'
+          path: scripts/test.sql
+          action: execute
 
       - name: Azure logout
         run: |
